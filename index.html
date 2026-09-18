@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Productions</title>
+  <meta name="description" content="MC Productions — trailers and upcoming projects from Malcolm and Cole.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@500;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-night">
+  <header class="site-header">
+    <a class="logo" href="index.html">MC<span>PRODUCTIONS</span></a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="malcolm.html">Malcolm</a>
+      <a href="cole.html">Cole</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="stamp" id="date-stamp" aria-hidden="true">
+        <span class="md">9/18</span>
+        <span class="dow">FRI</span>
+      </div>
+      <div class="hero-text">
+        <p class="kicker">Now showing</p>
+        <h1><span>MC</span> Productions</h1>
+        <p class="lead">Films, trailers and projects made by Malcolm and Cole.</p>
+        <a class="btn" href="#trailers-section">Watch the trailers</a>
+      </div>
+    </section>
+
+    <section id="trailers-section">
+      <h2 class="section-title"><span>Trailers</span></h2>
+      <div class="grid" id="trailers"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>Upcoming Projects</span></h2>
+      <div class="grid" id="upcoming"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>The Crew</span></h2>
+      <div class="crew">
+        <a class="crew-card crew-malcolm" href="malcolm.html">
+          <span class="crew-role">Director / Photographer</span>
+          <span class="crew-name">Malcolm</span>
+          <span class="crew-go">Open file →</span>
+        </a>
+        <a class="crew-card crew-cole" href="cole.html">
+          <span class="crew-role">Editing / Code</span>
+          <span class="crew-name">Cole</span>
+          <span class="crew-go">Jack in →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> MC Productions</footer>
+
+  <script src="content.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
