@@ -26,6 +26,18 @@ window.MC = {
     { title: "Trailer Three", url: "", note: "Behind the scenes" },
   ],
 
+  /* Wedding photos we edited (home page gallery) */
+  weddings: [
+    { title: "The Rings", img: "images/weddings/rings.jpg", note: "Detail shot" },
+    { title: "Red Truck Kiss", img: "images/weddings/truck-kiss.jpg", note: "Colour grade" },
+    { title: "Red Truck Kiss", img: "images/weddings/truck-kiss-bw.jpg", note: "Black and white edit" },
+    { title: "Just Married", img: "images/weddings/truck-laugh.jpg", note: "Colour grade" },
+    { title: "Golden Hour Portrait", img: "images/weddings/golden-hour-portrait.jpg", note: "Colour grade" },
+    { title: "Golden Hour", img: "images/weddings/golden-hour-close.jpg", note: "Colour grade" },
+    { title: "Golden Hour", img: "images/weddings/golden-hour-close-bw.jpg", note: "Black and white edit" },
+    { title: "Forehead Kiss", img: "images/weddings/forehead-kiss.jpg", note: "Colour grade" },
+  ],
+
   upcoming: [
     { title: "Untitled Project A", status: "IN PRODUCTION", blurb: "Short description of the project goes here." },
     { title: "Untitled Project B", status: "WRITING",       blurb: "Short description of the project goes here." },

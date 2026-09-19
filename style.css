@@ -291,10 +291,16 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 .theme-waste .btn { font-size: 1.3rem; padding: 6px 20px; transform: skewX(-10deg); }
 .theme-waste .btn:hover { transform: skewX(-10deg) translate(-2px, -2px); box-shadow: 5px 5px 0 var(--accent-2); }
 
+/* ---------- HOME PAGE PHOTO GALLERY ---------- */
+.grid.gallery { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.gallery .art-card .frame { aspect-ratio: 1 / 1; }
+.gallery .art-card .frame img { object-fit: cover; object-position: center 25%; }
+.theme-night .section-note { margin-top: -8px; }
+
 /* ---------- HIRE US / CONTACT FORM ---------- */
 nav a.hire { border-color: var(--accent-2); color: var(--accent-2); }
 nav a.hire:hover { background: var(--accent-2); color: var(--bg); }
-#contact { scroll-margin-top: 70px; }
+section[id] { scroll-margin-top: 80px; }
 .contact-intro { max-width: 60ch; margin-bottom: 24px; font-size: 1.15rem; color: var(--muted); }
 .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 760px; background: var(--card); border: 2px solid var(--line); padding: 28px; }
 .field { display: flex; flex-direction: column; gap: 6px; }
@@ -346,9 +352,10 @@ button.btn:disabled { opacity: 0.6; cursor: wait; }
   .field input, .field select, .field textarea { font-size: 16px; }
 
   /* photo + game galleries: two across so the page isn't endless */
-  #malcolm-art, #malcolm-games { grid-template-columns: 1fr 1fr; gap: 10px; }
+  #malcolm-art, #malcolm-games, .grid.gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
   .art-card .info { padding: 8px 10px 10px; }
   .theme-waste .art-card h3 { font-size: 1.15rem; line-height: 1; }
+  .gallery .art-card h3 { font-size: 0.95rem; }
   .art-card .note { font-size: 0.72rem; }
   .theme-waste .card, .theme-waste .card:nth-child(even), .theme-night .card, .theme-night .card:nth-child(even) { transform: none; }
 }

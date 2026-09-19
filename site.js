@@ -215,6 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupContactForm();
   const MC = window.MC;
   fill("trailers", MC.trailers, videoCard);
+  fill("weddings", MC.weddings, artCard);
   fill("upcoming", MC.upcoming, upcomingCard);
   fill("malcolm-films", MC.malcolm.films, videoCard);
   fill("malcolm-art", MC.malcolm.art, artCard);
