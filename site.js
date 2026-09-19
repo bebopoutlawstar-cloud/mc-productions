@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fill("upcoming", MC.upcoming, upcomingCard);
   fill("malcolm-films", MC.malcolm.films, videoCard);
   fill("malcolm-art", MC.malcolm.art, artCard);
+  fill("malcolm-games", MC.malcolm.games, artCard);
   fill("cole-edits", MC.cole.edits, videoCard);
   fill("cole-code", MC.cole.code, codeCard);
   setText("malcolm-bio", MC.malcolm.bio);
