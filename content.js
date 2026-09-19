@@ -15,7 +15,7 @@ window.MC = {
      Paste the access key they email you between the quotes.
      (The key is safe to have in this file - it only lets people
      send messages TO you, and it keeps your email address hidden.) */
-  contactKey: "",
+  contactKey: "ab23b3f6-0e0f-4247-81c8-b2641466c3ab",
 
   /* ---------- HOME PAGE ---------- */
   mission: "With over five years of experience in multimedia, productions, and trailers, MC Productions has developed a new approach across a multitude of art forms, one that will not only meet client needs but exceed them.",

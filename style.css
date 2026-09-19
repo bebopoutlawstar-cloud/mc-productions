@@ -114,11 +114,11 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 /* ---------- 2. HOME: NIGHTLINE ---------- */
 .theme-night {
   --bg: #0a0614; --card: #140c26; --empty: #1b1033; --line: #2c1d52;
-  --text: #f4f0ff; --muted: #a99fc9;
+  --text: #f7f4ff; --muted: #cfc8e6;
   --accent: #00e5ff; --accent-2: #ff2bd6;
   --header-bg: rgba(10, 6, 20, 0.92);
-  --font-head: "Anton", "Orbitron", Impact, sans-serif;
-  --font-body: "Rajdhani", system-ui, sans-serif;
+  --font-head: "Anton", Impact, sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
   background-image:
     radial-gradient(circle at 85% 8%, rgba(255, 43, 214, 0.22), transparent 40%),
     radial-gradient(circle at 10% 60%, rgba(0, 229, 255, 0.14), transparent 45%),
@@ -164,6 +164,23 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 .crew-cole .crew-name { text-shadow: 3px 0 #ff2bd6; }
 .crew-malcolm { background: #0a0506; color: #ff1f3d; font-family: "Courier New", monospace; }
 .crew-malcolm .crew-name { text-shadow: 3px 3px 0 #fff2; }
+
+/* Readability: the big poster font stays on the main title and section
+   banners only. Everything people actually read uses a clean, wider font. */
+.theme-night { line-height: 1.6; }
+.theme-night .logo, .theme-night .section-title { letter-spacing: 1.5px; }
+.theme-night nav a, .theme-night .btn, .theme-night .tag, .theme-night .num,
+.theme-night .soon, .theme-night .field label {
+  font-family: "Barlow Condensed", "Barlow", sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1.5px;
+}
+.theme-night .tag { font-size: 0.85rem; }
+.theme-night .card h3 { font-family: "Barlow", sans-serif; font-weight: 700; font-size: 1.3rem; line-height: 1.2; letter-spacing: 0; }
+.theme-night .card .note { font-size: 1rem; }
+.theme-night .text-card p { font-size: 1.05rem; }
+.theme-night .mission { font-size: 1.35rem; line-height: 1.6; font-weight: 500; max-width: 56ch; }
+.theme-night .section-note, .theme-night .contact-intro { font-size: 1.15rem; color: var(--muted); }
+.theme-night .crew-role, .theme-night .crew-go { font-size: 0.95rem; letter-spacing: 2px; }
+.theme-night footer { font-size: 1rem; }
 
 /* ---------- 3. COLE: CYBERPUNK ---------- */
 .theme-cyber {
@@ -333,7 +350,7 @@ button.btn:disabled { opacity: 0.6; cursor: wait; }
   section { padding: 30px 0; }
   .hero { min-height: 0; padding-top: 40px; gap: 24px; }
   .lead { font-size: 1.05rem; margin: 12px 0 22px; }
-  .mission { font-size: 1.05rem; padding-left: 12px; }
+  .mission, .theme-night .mission { font-size: 1.12rem; padding-left: 12px; }
   .clapper { display: none; }
   .theme-night .hero h1 { font-size: 13.5vw; margin-bottom: 28px; text-shadow: 3px 3px 0 var(--accent-2), -2px -2px 0 var(--accent); }
   .theme-cyber .hero h1 { letter-spacing: 3px; }
@@ -356,7 +373,8 @@ button.btn:disabled { opacity: 0.6; cursor: wait; }
   #malcolm-art, #malcolm-games, .grid.gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
   .art-card .info { padding: 8px 10px 10px; }
   .theme-waste .art-card h3 { font-size: 1.15rem; line-height: 1; }
-  .gallery .art-card h3 { font-size: 0.95rem; }
+  .gallery .art-card h3, .theme-night .gallery .art-card h3 { font-size: 1rem; }
+  .theme-night nav a { font-size: 0.85rem; padding: 6px 8px; letter-spacing: 0.5px; }
   .art-card .note { font-size: 0.72rem; }
   .theme-waste .card, .theme-waste .card:nth-child(even), .theme-night .card, .theme-night .card:nth-child(even) { transform: none; }
 }
