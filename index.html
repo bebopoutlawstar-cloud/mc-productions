@@ -16,6 +16,7 @@
       <a href="index.html" class="active">Home</a>
       <a href="malcolm.html">Malcolm</a>
       <a href="cole.html">Cole</a>
+      <a href="#contact" class="hire">Hire Us</a>
     </nav>
   </header>
 
@@ -24,7 +25,10 @@
       <div class="hero-text">
         <h1>MC Productions</h1>
         <p class="mission" id="mission"></p>
-        <a class="btn" href="#trailers-section">Watch the trailers</a>
+        <div class="hero-links">
+          <a class="btn" href="#trailers-section">Watch the trailers</a>
+          <a class="btn ghost" href="#contact">Hire us</a>
+        </div>
       </div>
       <svg class="clapper" viewBox="0 0 200 170" aria-hidden="true">
         <g class="clap-arm">
@@ -63,6 +67,41 @@
           <span class="crew-go">Jack in →</span>
         </a>
       </div>
+    </section>
+    <section id="contact">
+      <h2 class="section-title"><span>Hire Us</span></h2>
+      <p class="contact-intro">Need a video edited, something filmed, or gameplay captured and cut into a trailer? Tell us about it and we'll get back to you.</p>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Your email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field wide">
+          <label for="cf-service">What do you need?</label>
+          <select id="cf-service" name="service">
+            <option>Video editing</option>
+            <option>Filming</option>
+            <option>Game capture / game trailer</option>
+            <option>Trailer or promo</option>
+            <option>Photography</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field wide">
+          <label for="cf-message">Tell us about the project</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+        <!-- spam trap: real people never see or fill this -->
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field wide form-actions">
+          <button class="btn" type="submit">Send message</button>
+          <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </section>
   </main>
 

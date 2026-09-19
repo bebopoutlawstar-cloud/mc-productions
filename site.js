@@ -169,7 +169,50 @@ function setText(id, text) {
   if (node && text) node.textContent = text;
 }
 
+// "Hire Us" form: sends the message without leaving the page
+function setupContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+  const status = document.getElementById("contact-status");
+  const button = form.querySelector("button");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (data._honey) return;                       // a bot filled the hidden box
+    if (!data.name.trim() || !data.message.trim() || !/^\S+@\S+\.\S+$/.test(data.email)) {
+      status.textContent = "Please add your name, a valid email and a message.";
+      status.className = "form-status error";
+      return;
+    }
+    data._subject = "MC Productions enquiry: " + data.service;
+    data._template = "table";
+    button.disabled = true;
+    status.textContent = "Sending...";
+    status.className = "form-status";
+
+    fetch("https://formsubmit.co/ajax/" + window.MC.contactTo, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then(function (response) { return response.json(); })
+      .then(function (result) {
+        if (String(result.success) !== "true") throw new Error(result.message);
+        form.reset();
+        status.textContent = "Thanks! Your message is on its way. We'll be in touch soon.";
+        status.className = "form-status ok";
+      })
+      .catch(function () {
+        status.textContent = "Something went wrong sending that. Please try again in a minute.";
+        status.className = "form-status error";
+      })
+      .finally(function () { button.disabled = false; });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  setupContactForm();
   const MC = window.MC;
   fill("trailers", MC.trailers, videoCard);
   fill("upcoming", MC.upcoming, upcomingCard);
