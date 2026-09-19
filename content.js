@@ -91,7 +91,10 @@ window.MC = {
     edits: [
       { title: "Editing Reel", url: "https://www.youtube.com/watch?v=4NnF5rzxVTw", note: "Editing reel" },
       { title: "Capture Reel 2024", url: "https://drive.google.com/file/d/1rxkeFzeGHFG87lgmlJAzIND_Eb88jbyi/view", note: "Capture reel" },
-      { title: "Edit Three", url: "", note: "Video edit" },
+      { title: "Horror Music Video", url: "https://youtu.be/-RIMTT7e7gU", note: "Music video edit" },
+      { title: "Beauty: A Poetic Documentary", url: "https://youtu.be/DJLqckshhu8", note: "Poetic documentary" },
+      { title: "Masculinity", url: "https://youtu.be/uj4uCdC-RaM", note: "Video essay" },
+      { title: "What Cons Are Like", url: "https://youtu.be/7bPcYitOz2M", note: "Comic Con short documentary" },
     ],
     code: [
       {
