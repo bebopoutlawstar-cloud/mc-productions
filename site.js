@@ -185,20 +185,27 @@ function setupContactForm() {
       status.className = "form-status error";
       return;
     }
-    data._subject = "MC Productions enquiry: " + data.service;
-    data._template = "table";
+    if (!window.MC.contactKey) {
+      status.textContent = "The contact form isn't switched on yet. Please check back soon.";
+      status.className = "form-status error";
+      return;
+    }
+    delete data._honey;
+    data.access_key = window.MC.contactKey;
+    data.subject = "MC Productions enquiry: " + data.service;
+    data.from_name = "MC Productions website";
     button.disabled = true;
     status.textContent = "Sending...";
     status.className = "form-status";
 
-    fetch("https://formsubmit.co/ajax/" + window.MC.contactTo, {
+    fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(data),
     })
       .then(function (response) { return response.json(); })
       .then(function (result) {
-        if (String(result.success) !== "true") throw new Error(result.message);
+        if (!result.success) throw new Error(result.message);
         form.reset();
         status.textContent = "Thanks! Your message is on its way. We'll be in touch soon.";
         status.className = "form-status ok";

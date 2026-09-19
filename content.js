@@ -11,11 +11,11 @@
 window.MC = {
 
   /* ---------- CONTACT FORM ----------
-     Messages from the "Hire Us" form are forwarded to this address
-     by formsubmit.co. After you activate it (see their first email),
-     you can swap the address for the random code they give you so
-     your real email isn't visible in this file. */
-  contactTo: "bebopoutlawstar@gmail.com",
+     The "Hire Us" form is delivered by web3forms.com.
+     Paste the access key they email you between the quotes.
+     (The key is safe to have in this file - it only lets people
+     send messages TO you, and it keeps your email address hidden.) */
+  contactKey: "",
 
   /* ---------- HOME PAGE ---------- */
   mission: "With over five years of experience in multimedia, productions, and trailers, MC Productions has developed a new approach across a multitude of art forms, one that will not only meet client needs but exceed them.",
