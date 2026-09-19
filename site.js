@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fill("malcolm-art", MC.malcolm.art, artCard);
   fill("malcolm-games", MC.malcolm.games, artCard);
   fill("cole-edits", MC.cole.edits, videoCard);
+  fill("cole-podcast", MC.cole.podcast, videoCard);
   fill("cole-code", MC.cole.code, codeCard);
   setText("malcolm-bio", MC.malcolm.bio);
   setText("cole-bio", MC.cole.bio);

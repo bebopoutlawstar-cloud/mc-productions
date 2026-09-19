@@ -115,6 +115,11 @@ window.MC = {
       { title: "Masculinity", url: "https://youtu.be/uj4uCdC-RaM", note: "Video essay" },
       { title: "What Cons Are Like", url: "https://youtu.be/7bPcYitOz2M", note: "Comic Con short documentary" },
     ],
+    /* Podcast I recorded, edited and animated (Malcolm guest stars) */
+    podcast: [
+      { title: "Pod 9: Obsessed", url: "https://youtu.be/2WLKvxZTCCU", note: "Anonymous Storytellers · strong language" },
+      { title: "Pod 8: My Property Isn't Normal, Part 6", url: "https://youtu.be/9KM_lbnQMeM", note: "Anonymous Storytellers · strong language" },
+    ],
     code: [
       {
         title: "NightLine",
