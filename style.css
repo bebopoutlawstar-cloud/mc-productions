@@ -245,6 +245,29 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
   color: var(--accent); transform: rotate(-4deg); margin: 6px 0 36px;
   text-shadow: 4px 4px 0 #000, -4px 2px 0 rgba(60, 120, 255, 0.75), 8px 8px 0 var(--accent-2);
 }
+/* horizontal glitch: thin bands of the name slide left and right */
+.glitch-h { position: relative; display: inline-block; }
+.glitch-h::before, .glitch-h::after {
+  content: attr(data-text); position: absolute; left: 0; top: 0;
+  text-shadow: none; clip-path: inset(0 0 100% 0); pointer-events: none;
+}
+.glitch-h::before { color: #fff; animation: slice-a 3.2s infinite steps(1); }
+.glitch-h::after { color: #3c78ff; animation: slice-b 2.7s infinite steps(1); }
+@keyframes slice-a {
+  0%, 70%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+  72% { clip-path: inset(18% 0 66% 0); transform: translateX(-22px); }
+  75% { clip-path: inset(55% 0 30% 0); transform: translateX(16px); }
+  78% { clip-path: inset(36% 0 52% 0); transform: translateX(-10px); }
+  81% { clip-path: inset(74% 0 10% 0); transform: translateX(26px); }
+}
+@keyframes slice-b {
+  0%, 40%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+  42% { clip-path: inset(62% 0 24% 0); transform: translateX(20px); }
+  45% { clip-path: inset(8% 0 80% 0); transform: translateX(-18px); }
+  48% { clip-path: inset(44% 0 44% 0); transform: translateX(30px); }
+  90% { clip-path: inset(28% 0 60% 0); transform: translateX(-14px); }
+  92% { clip-path: inset(0 0 100% 0); }
+}
 .cursor { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
