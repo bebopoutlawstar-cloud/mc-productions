@@ -132,15 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fill("cole-code", MC.cole.code, codeCard);
   setText("malcolm-bio", MC.malcolm.bio);
   setText("cole-bio", MC.cole.bio);
-
-  // Today's date in the stamp, NightLine style
-  const stamp = document.getElementById("date-stamp");
-  if (stamp) {
-    const now = new Date();
-    const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-    stamp.querySelector(".md").textContent = (now.getMonth() + 1) + "/" + now.getDate();
-    stamp.querySelector(".dow").textContent = days[now.getDay()];
-  }
+  setText("mission", MC.mission);
 
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();

@@ -11,7 +11,7 @@
 </head>
 <body class="theme-night">
   <header class="site-header">
-    <a class="logo" href="index.html">MC<span>PRODUCTIONS</span></a>
+    <a class="logo" href="index.html">MC PRODUCTIONS</a>
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="malcolm.html">Malcolm</a>
@@ -21,16 +21,22 @@
 
   <main>
     <section class="hero">
-      <div class="stamp" id="date-stamp" aria-hidden="true">
-        <span class="md">9/18</span>
-        <span class="dow">FRI</span>
-      </div>
       <div class="hero-text">
-        <p class="kicker">Now showing</p>
-        <h1><span>MC</span> Productions</h1>
-        <p class="lead">Films, trailers and projects made by Malcolm and Cole.</p>
+        <h1>MC Productions</h1>
+        <p class="mission" id="mission"></p>
         <a class="btn" href="#trailers-section">Watch the trailers</a>
       </div>
+      <svg class="clapper" viewBox="0 0 200 170" aria-hidden="true">
+        <g class="clap-arm">
+          <rect x="10" y="22" width="180" height="26" rx="3" class="c-body"/>
+          <path d="M22 22l16 26M58 22l16 26M94 22l16 26M130 22l16 26M166 22l16 26" class="c-stripe"/>
+        </g>
+        <rect x="10" y="52" width="180" height="22" class="c-body"/>
+        <path d="M22 52l16 22M58 52l16 22M94 52l16 22M130 52l16 22M166 52l16 22" class="c-stripe"/>
+        <rect x="10" y="74" width="180" height="86" rx="3" class="c-slate"/>
+        <path d="M10 102h180M10 130h180M76 102v58M134 102v58" class="c-line"/>
+        <text x="20" y="95" class="c-text">MC PRODUCTIONS</text>
+      </svg>
     </section>
 
     <section id="trailers-section">

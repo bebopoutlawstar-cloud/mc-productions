@@ -11,6 +11,8 @@
 window.MC = {
 
   /* ---------- HOME PAGE ---------- */
+  mission: "With over five years of experience creating trailers, films, video game trailers, music videos, and documentaries, MC Productions is here to create a new approach in these art forms.",
+
   trailers: [
     { title: "FallOut London Teaser", url: "https://youtu.be/VWYAU3HW_y0", note: "Teaser" },
     { title: "Trailer Two",   url: "", note: "Teaser" },

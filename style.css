@@ -37,7 +37,6 @@ p { margin: 0; }
   font-family: var(--font-head); font-size: 1.5rem;
   color: var(--text); text-decoration: none; letter-spacing: 1px;
 }
-.logo span { color: var(--accent); margin-left: 6px; font-size: 0.8em; }
 nav { display: flex; gap: 6px; }
 nav a {
   padding: 6px 14px; text-decoration: none; text-transform: uppercase;
@@ -126,19 +125,23 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
     repeating-linear-gradient(-32deg, transparent 0 60px, rgba(255, 255, 255, 0.025) 60px 62px);
   background-attachment: fixed;
 }
-.theme-night .hero h1 { transform: rotate(-4deg); margin: 10px 0 44px; font-size: clamp(2.8rem, 9vw, 6rem); text-shadow: 5px 5px 0 var(--accent-2); }
-.theme-night .hero h1 span { background: var(--accent); color: var(--bg); padding: 0 14px; display: inline-block; transform: skewX(-10deg); text-shadow: none; }
-
-.stamp {
-  flex: 0 0 auto; display: flex; flex-direction: column; align-items: center;
-  padding: 18px 34px 14px; transform: rotate(-12deg);
-  background: var(--text); color: var(--bg);
-  font-family: "Anton", Impact, sans-serif; line-height: 1;
-  box-shadow: 10px 10px 0 var(--accent-2), -6px -6px 0 var(--accent);
-  clip-path: polygon(0 6%, 100% 0, 96% 100%, 4% 94%);
+.theme-night .hero { justify-content: space-between; }
+.theme-night .hero h1 {
+  font-size: clamp(3rem, 10vw, 7.5rem); transform: rotate(-3deg); margin: 0 0 40px;
+  text-shadow: 5px 5px 0 var(--accent-2), -3px -3px 0 var(--accent);
 }
-.stamp .md { font-size: clamp(3.5rem, 10vw, 6.5rem); }
-.stamp .dow { font-size: clamp(1.4rem, 4vw, 2.4rem); background: var(--bg); color: var(--accent); padding: 2px 16px; margin-top: 6px; transform: skewX(-12deg); }
+.mission { font-size: 1.3rem; max-width: 52ch; margin: 0 0 28px; color: var(--text); border-left: 4px solid var(--accent); padding-left: 16px; }
+
+/* small, quiet clapperboard beside the title */
+.clapper { flex: 0 0 auto; width: clamp(110px, 16vw, 180px); opacity: 0.75; transform: rotate(6deg); }
+.clapper .c-body { fill: var(--text); }
+.clapper .c-stripe { stroke: var(--bg); stroke-width: 9; }
+.clapper .c-slate { fill: var(--card); stroke: var(--text); stroke-width: 3; }
+.clapper .c-line { stroke: var(--line); stroke-width: 2; }
+.clapper .c-text { fill: var(--accent); font: 13px "Anton", Impact, sans-serif; letter-spacing: 1.5px; }
+.clap-arm { transform-origin: 12px 48px; transform: rotate(-16deg); transition: transform 0.18s ease-in; }
+.clapper:hover .clap-arm { transform: rotate(0); }
+
 
 .theme-night .section-title span {
   display: inline-block; background: var(--text); color: var(--bg);
@@ -159,7 +162,8 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 .crew-role, .crew-go { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; }
 .crew-cole { background: #05010f; color: #00e5ff; font-family: "Orbitron", sans-serif; }
 .crew-cole .crew-name { text-shadow: 3px 0 #ff2bd6; }
-.crew-malcolm { background: #07140a; color: #3dff7a; font-family: "Courier New", monospace; }
+.crew-malcolm { background: #0a0506; color: #ff1f3d; font-family: "Courier New", monospace; }
+.crew-malcolm .crew-name { text-shadow: 3px 3px 0 #fff2; }
 
 /* ---------- 3. COLE: CYBERPUNK ---------- */
 .theme-cyber {
@@ -204,20 +208,22 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 .theme-cyber .frame.empty { background: repeating-linear-gradient(45deg, #0b0524 0 14px, #120838 14px 28px); }
 
 /* ---------- 4. MALCOLM: WASTELAND TERMINAL x PERSONA ----------
-   Dark neutral screen, green + amber as accents only,
+   Black and red, spray-paint / halftone street feel,
    photos in full colour, tilted Persona-style blocks.        */
 .theme-waste {
-  --bg: #0a0b0a; --card: #121512; --empty: #161a16; --line: #2a332c;
-  --text: #ecf3ec; --muted: #9aa89d;
-  --accent: #4dff88; --accent-2: #ffb642;
-  --header-bg: rgba(10, 11, 10, 0.95);
+  --bg: #070607; --card: #121012; --empty: #181316; --line: #33222a;
+  --text: #f5eef0; --muted: #a8979c;
+  --accent: #ff1f3d; --accent-2: #f5eef0;
+  --header-bg: rgba(7, 6, 7, 0.95);
   --font-head: "VT323", "Courier New", monospace;
   --font-body: "Share Tech Mono", "Courier New", monospace;
   font-size: 17px;
   background-image:
-    radial-gradient(circle at 88% 6%, rgba(255, 182, 66, 0.16), transparent 38%),
-    radial-gradient(circle at 8% 55%, rgba(77, 255, 136, 0.10), transparent 42%),
-    repeating-linear-gradient(-32deg, transparent 0 60px, rgba(255, 255, 255, 0.022) 60px 62px);
+    radial-gradient(circle at 88% 4%, rgba(255, 31, 61, 0.30), transparent 40%),
+    radial-gradient(circle at 5% 70%, rgba(120, 40, 255, 0.12), transparent 40%),
+    radial-gradient(rgba(255, 31, 61, 0.16) 1.5px, transparent 1.6px),
+    repeating-linear-gradient(-32deg, transparent 0 60px, rgba(255, 255, 255, 0.02) 60px 62px);
+  background-size: auto, auto, 14px 14px, auto;
   background-attachment: fixed;
 }
 /* faint CRT scanlines, light enough that the photos stay clear */
@@ -237,7 +243,7 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 .theme-waste .hero h1 {
   font-size: clamp(3.5rem, 13vw, 8rem); letter-spacing: 4px;
   color: var(--accent); transform: rotate(-4deg); margin: 6px 0 36px;
-  text-shadow: 5px 5px 0 #000, 9px 9px 0 var(--accent-2);
+  text-shadow: 4px 4px 0 #000, -4px 2px 0 rgba(60, 120, 255, 0.75), 8px 8px 0 var(--accent-2);
 }
 .cursor { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -264,5 +270,4 @@ footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size:
 
 @media (max-width: 600px) {
   .hero { min-height: 0; padding-top: 56px; gap: 40px; }
-  .stamp { margin-left: 12px; }
 }
