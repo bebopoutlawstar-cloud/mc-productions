@@ -79,11 +79,9 @@ function artCard(item) {
     img.src = item.img;
     img.alt = item.title;
     img.loading = "lazy";
-    const link = document.createElement("a");   // click to open full size
-    link.href = item.img;
-    link.target = "_blank";
-    link.appendChild(img);
-    frame.appendChild(link);
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function () { openLightbox(img); });
+    frame.appendChild(img);
   } else {
     frame.classList.add("empty");
     frame.appendChild(el("span", "soon", "NO DATA"));
@@ -108,6 +106,55 @@ function codeCard(item) {
   if (item.repo) { const a = el("a", "btn ghost", "Source"); a.href = item.repo; a.target = "_blank"; a.rel = "noopener"; links.appendChild(a); }
   card.appendChild(links);
   return card;
+}
+
+// Full-screen photo viewer: tap a photo, use arrows / swipe / Esc
+let lbImages = [];
+let lbIndex = 0;
+function showLightbox() {
+  const box = document.getElementById("lightbox");
+  const current = lbImages[lbIndex];
+  box.querySelector("img").src = current.src;
+  box.querySelector("img").alt = current.alt;
+  box.querySelector(".lb-cap").textContent = current.alt;
+}
+function stepLightbox(step) {
+  lbIndex = (lbIndex + step + lbImages.length) % lbImages.length;
+  showLightbox();
+}
+function closeLightbox() { document.getElementById("lightbox").classList.remove("open"); }
+function openLightbox(img) {
+  let box = document.getElementById("lightbox");
+  if (!box) {
+    box = el("div", "lightbox");
+    box.id = "lightbox";
+    box.appendChild(document.createElement("img"));
+    box.appendChild(el("p", "lb-cap"));
+    const close = el("button", "lb-close", "×"); close.setAttribute("aria-label", "Close");
+    const prev = el("button", "lb-prev", "‹"); prev.setAttribute("aria-label", "Previous photo");
+    const next = el("button", "lb-next", "›"); next.setAttribute("aria-label", "Next photo");
+    box.append(close, prev, next);
+    document.body.appendChild(box);
+    prev.addEventListener("click", function (e) { e.stopPropagation(); stepLightbox(-1); });
+    next.addEventListener("click", function (e) { e.stopPropagation(); stepLightbox(1); });
+    box.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", function (e) {
+      if (!box.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") stepLightbox(-1);
+      if (e.key === "ArrowRight") stepLightbox(1);
+    });
+    let startX = 0;
+    box.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; });
+    box.addEventListener("touchend", function (e) {
+      const moved = e.changedTouches[0].clientX - startX;
+      if (Math.abs(moved) > 50) { e.preventDefault(); stepLightbox(moved < 0 ? 1 : -1); }
+    });
+  }
+  lbImages = Array.from(img.closest(".grid").querySelectorAll("img"));
+  lbIndex = lbImages.indexOf(img);
+  showLightbox();
+  box.classList.add("open");
 }
 
 // Fill a container (by id) with cards
